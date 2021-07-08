@@ -107,7 +107,7 @@ const artists = [
          "https://upload.wikimedia.org/wikipedia/commons/a/ac/Kay_Kay_Menon_at_libas_store.jpg",
        wiki_url: "https://en.wikipedia.org/wiki/Kay_Kay_Menon",
      },
-   ];
+];
    
 export default artists;
    

@@ -268,7 +268,7 @@ let moviesData = [
          },
        ],
      },
-   ];
+];
    
 export default moviesData;
    

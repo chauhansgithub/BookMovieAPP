@@ -4,22 +4,23 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import GridListTile from "@material-ui/core/GridListTile";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
+
 const useStyles = makeStyles({
   link: {
     cursor: "pointer",
   },
 });
+
 export default function AllMovies({ movies }) {
   const classes = useStyles();
   return (
     <div>
-      <GridList cols={4} cellHeight={350}>
+      <GridList cols={4} cellHeight={350} className={classes.link}>
         {movies.map(movie => (
           <GridListTile
             component={Link}
             to={`/details/${movie.id}`}
-            key={movie.id}
-            className={classes.link}>
+            key={movie.id}>
             <img src={movie.poster_url} alt={movie.title} />
             <GridListTileBar
               title={movie.title}

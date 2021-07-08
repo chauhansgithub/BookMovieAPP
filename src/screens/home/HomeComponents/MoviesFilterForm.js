@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => {
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-export default function App(props) {
+export default function MoviesFilterForm(props) {
   const {
     genres,
     artists,
