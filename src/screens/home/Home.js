@@ -8,9 +8,7 @@ import MoviesFilterForm from "./HomeComponents/MoviesFilterForm";
 import genres from "./../../common/genres";
 import artists from "./../../common/artists";
 
-
 const Home = () => {
-
   const [movies, setMovies] = useState(moviesData);
   const [filterFormValues, setFilterFormValues] = useState({
     movieName: "",
@@ -23,24 +21,20 @@ const Home = () => {
   const filterList = () => {
     let finalFilteredMovieList = moviesData;
     const formValues = { ...filterFormValues };
-    console.log("formValues", formValues);
     if (formValues.movieName) {
       finalFilteredMovieList = finalFilteredMovieList.filter(
         movie =>
           movie.title.toLowerCase() === formValues.movieName.toLowerCase()
       );
     }
-
     if (formValues.genresList.length > 0) {
       finalFilteredMovieList = finalFilteredMovieList.filter(movie => {
         for (let i = 0; i < formValues.genresList.length; i++) {
-          console.log(movie.genres, formValues.genresList);
           if (movie.genres.includes(formValues.genresList[i].name)) return true;
         }
         return false;
       });
     }
-
     if (formValues.artistsList.length > 0) {
       finalFilteredMovieList = finalFilteredMovieList.filter(movie => {
         const fullNameArray = [];
@@ -58,7 +52,6 @@ const Home = () => {
         return false;
       });
     }
-
     if (formValues.releaseDateStart && formValues.releaseDateEnd) {
       const releaseDateStart = new Date(formValues.releaseDateStart);
       const releaseDateEnd = new Date(formValues.releaseDateEnd);
